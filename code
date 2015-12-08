@@ -1,0 +1,19 @@
+import random
+
+if __name__ == '__main__':
+	code = raw_input('seed:')
+	seed = 0
+	for c in code:
+		seed *= 10
+		seed += ord(c)
+
+	random.seed(code)
+
+	code = ''
+
+	for i in range(0,15):
+		code += chr(random.randint(33,126))
+
+	f = open('code.txt','w')
+	f.write(code)
+	f.close()
